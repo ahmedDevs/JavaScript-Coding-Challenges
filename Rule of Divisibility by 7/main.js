@@ -54,4 +54,3 @@ function seven (m) {
     arr.push(num2, count);
     return arr;
 }
-console.log(seven(477557101));
