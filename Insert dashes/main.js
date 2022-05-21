@@ -16,4 +16,3 @@ function insertDash(num) {
      });
      return arrNum.join('');
 }
-console.log(insertDash(454793));
