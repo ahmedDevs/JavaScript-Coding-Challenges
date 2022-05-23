@@ -13,19 +13,8 @@ The input is a string of only digits
 The numbers are positives
 */
 
-//prep
 
-// p two numbers given as strings  nums are positives and they big!
-// return the sum of 2 nums as a string too
-// example ('5', '90') --> '95'
-// peseoudo
 
-//function 
-// convert strings to nums 
-// add the nums
-// convert the result to string
-// return result 
-// BUB
 
 function sumsTwoNums(a,b) {
     const sum = Number(a) + Number(b);
