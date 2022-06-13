@@ -11,3 +11,4 @@ For example:
 function maps(x){
     return  x.map (integer => integer * 2);
    }
+    
