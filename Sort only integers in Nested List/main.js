@@ -1,0 +1,17 @@
+/*
+DESCRIPTION:
+You get some nested lists. Keeping the original structures, sort only elements (integers) inside of the lists. In other words, sorting the intergers only by swapping their positions.
+
+Example
+Input   : [[[2, 1], [4, 3]], [[6, 5], [8, 7]]]
+Output  : [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+Note: The structures of the lists are regular (symmetrical) and their depths are 3.
+*/
+
+
+
+
+const sortIntegers = arr => {
+    const nestedArrayOfArrays = arr
+    return nestedArrayOfArrays.map(e => e.map(e => e.sort((a,z) => a - z)))
+}
