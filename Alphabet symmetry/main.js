@@ -25,13 +25,12 @@ Alternate capitalization
 function solve(arr){  
     let count = [];
     let arr2 = arr.map(e => e.split(''));
-   
-    let alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l",
-    "m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+
     for(let i = 0; i < arr2.length; i++) {
         let count2 = 0;
         for(let n = 0; n < arr2[i].length; n++) {            
-            if(arr2[i][n] === alphabets[n] || arr2[i][n] === alphabets[n].toUpperCase()) {
+            if(arr2[i][n] === alphabet[n] || arr2[i][n] === alphabet[n].toUpperCase()) {
                 count2 += 1;
             }              
         }
