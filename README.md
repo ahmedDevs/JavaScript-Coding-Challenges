@@ -3,6 +3,6 @@ Some of the JavaScript coding challenges I've completed. This repository contain
 
 Language: JavaScript
 
-The problems and their solutions are not of any particular order and they are of various difficulty levels. What makes me keep solving those problems is getting to compare my solutions with other developers' ways of sloving them. I have and continue to learn ways to make my code more efficient and readable.
+The problems and their solutions are not of any particular order and they are of various difficulty levels. What makes me keep solving those problems is getting to compare my solutions with those of others. I have and continue to learn ways to make my code more efficient and readable.
 
 This repository is a updated almost daily to include my solutions to daily challenges I solve.
