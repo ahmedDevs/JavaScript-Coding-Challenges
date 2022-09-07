@@ -12,7 +12,7 @@ All letters will be lowercase and all inputs will be valid.
 */
 
 
-
+     
 
 function high(str){
     const alphabet = 'abcdefghijklmnopqrstuvwxyz'
