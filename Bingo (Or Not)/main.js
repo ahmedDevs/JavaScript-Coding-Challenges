@@ -19,4 +19,4 @@ function bingo(a) {
       } 
    } 
    return letterCount === 5 ? 'WIN' : 'LOSE';
-   }
+   }     
