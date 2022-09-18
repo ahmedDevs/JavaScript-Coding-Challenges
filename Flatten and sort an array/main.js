@@ -22,4 +22,4 @@ const flattenAndSort = array => {
   const unifiedArray = [].concat.apply([], array)
   const sortedUnifiedArr = unifiedArray.sort((a,z) => a - z)
   return sortedUnifiedArr
-}
+}     
