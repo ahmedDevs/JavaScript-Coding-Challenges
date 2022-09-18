@@ -15,4 +15,3 @@ function isHollow(x){
     return false
 
 }
-console.log(isHollow([-1,0,0,0,3]))
