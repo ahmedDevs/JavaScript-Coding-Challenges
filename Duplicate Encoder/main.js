@@ -16,7 +16,7 @@ Should encode XXX", the "XXX" is the expected result, not the input!
 */
 
 
-
+   
 function duplicateEncode(word){
     word = word.toLowerCase().split('')
     const duplicateArr = word.slice()
