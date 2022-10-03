@@ -14,13 +14,13 @@ Return matches in the same order as in the dictionary. Return an empty array if 
 
 Good luck!
 */
-// string, array of dictinary
-// array of matches from dictionary
-// ex  
-// pseudo code
+
+
 
 const grabscrab = (anagram, dictionary) => {
     return dictionary.filter(e => [...e].sort().join('') == [...anagram].sort().join(''))
 }
 
-console.log(grabscrab("ortsp", ["sport", "parrot", "ports", "matey"]))
+
+
+
