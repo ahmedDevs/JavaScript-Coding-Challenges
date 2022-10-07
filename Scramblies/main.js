@@ -12,53 +12,28 @@ scramble('cedewaraaossoqqyt', 'codewars') ==> True
 scramble('katas', 'steak') ==> False
 */
 
-// strings lowercase()    (geberrish, word to match)
-// true if the 1st param has the characters to form the 2nd param, otherwsie false
-// ex ('aknkandkandabfbgsb','Hello') ---> False
-// pseudo
-
-// function scramble (str1,str2)
-//  convert str1 to array and sort, then convert back to string
-// do the same with str2
-// remove duplicates from sorted str 1 
-// now, see if you can destructure str2 out of str1 , if yes return true , else false
 
 
-// const scramble = (str1,str2) => {
-//    const sortedStr2 = [...str2].join('')
-//    const sortedStr1 = [...str1].filter(e => sortedStr2.includes(e)).join('')
-//    return sortedStr1 
-//     for(let i = 0; i < sortedStr2.length; i++) {
-//         if(!sortedStr1.includes(sortedStr2[i])) return false    
-//    }
-//    return true 
-//   }
-// console.log(scramble('cedewaraaossoqqyt', 'codewars'))
+const scramble = (scramble,word) => {
+    // making a hash map for borth scramble and word
+    const hashMapScramble = {}
+    const hashMapWord = {}
+
+    // if the character being iterated exists or if doesn't ( || 0 fallback) reassign the key to increase by 1
+    for(const char of scramble) {
+     hashMapScramble[char] = (hashMapScramble[char] || 0) + 1
+    }
+    // same as above, but for the hash map word object
+    for(const char of word) {
+     hashMapWord[char] = (hashMapWord[char] || 0) + 1
+    }
+    // if the key in hash map word doesn't exist in the scramble hashmap, or if it's value is lower return false
+    for(key in hashMapWord) {
+     if(!hashMapScramble[key] || hashMapScramble[key] < hashMapWord[key]) return false
+    }
+    // else return true
+     return true 
+   }
 
 
-const scramble = (str1, str2) => {
-    if (str1.length < str2.length) return false
-    const arrStr2 = str2.split('')
-    str1.split('').forEach(e => {
-        if (arrStr2.includes(e)) arrStr2.splice(arrStr2.indexOf(e), 1)
-    })
-    return arrStr2.length === 0
-}
-console.log(scramble('cedewaraaossoqqyt', 'codewars'))
 
-
-// function scramble(str1, str2) {
-//     let occurences = str1.split("").reduce((arr, cur) => { arr[cur] ? arr[cur]++ : arr[cur] = 1; return arr; }, {});
-//     return str2.split("").every((character) => --occurences[character] >= 0);
-//   }
-
-// function scramble(str1, str2) {
-//     var hashtab = [...new Array(256)].map(x => 0);
-    
-//     str2.split('').forEach(ele => hashtab[ele.charCodeAt(0)]++);
-//     str1.split('').forEach(ele => hashtab[ele.charCodeAt(0)]--);
-    
-//     hashtab = hashtab.filter (x=>x > 0);
-    
-//     return hashtab.length == 0;
-//   }
