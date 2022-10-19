@@ -20,17 +20,7 @@ Return your answer as a number.
 
 
 function sumMix(arr) {
-    // let sum = 0
-    // for(let i = 0; i < arr.length; i++) {
-    //     sum += Number(arr[i])
-    // }
-    // return sum
-
     return arr.reduce((sum, current) => sum+ +current, 0)
-
-
-
-
 }
 console.log(sumMix([1,2,3,4,'5']))
 
