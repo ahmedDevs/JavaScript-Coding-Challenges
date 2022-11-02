@@ -11,11 +11,19 @@ All inputs will be valid.
 
 
 
-function last(x) {
-    let arr = x.split('');
-    let arrReversed = arr.reverse().map(e => e.split(''));
-     arrReversed = arrReversed.map(e => e.join(''));
-     arr = arrReversed.join('').split(' ');
-     return arr.sort().map(e => e.split('').reverse().join(''));  
- }
+// function last(x) {
+//     let arr = x.split('');
+//     let arrReversed = arr.reverse().map(e => e.split(''));
+//      arrReversed = arrReversed.map(e => e.join(''));
+//      arr = arrReversed.join('').split(' ');
+//      return arr.sort().map(e => e.split('').reverse().join(''));  
+//  }
+
+
+
+// one line solution
+
+const last = str => str.split(' ').sort((a,z) => a.charCodeAt(a.length-1) - z.charCodeAt(z.length-1))
+
+
  
