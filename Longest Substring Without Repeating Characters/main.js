@@ -27,4 +27,22 @@ Constraints:
 s consists of English letters, digits, symbols and spaces.
 */
 
+// string of letters  space? nums? special characters?
+// length of the longest substring without repeating characters 
+// "iamgroot" ---> "iamgro"  --> 6
+
+
+
+const lengthOfLongestSubstring = s => {
+    const strLengths = []
+
+    for(let i = 0; i < s.length; i++) {
+        const subString = s.substring(i)
+            if(subString.length === [...new Set(subString)].length) {
+                strLengths.push(subString)
+            }
+    }
+    return strLengths
+}
+console.log(lengthOfLongestSubstring("abcabcbb"))
 
