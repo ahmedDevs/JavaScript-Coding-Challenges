@@ -28,28 +28,32 @@ Follow up: What if the inputs contain Unicode characters? How would you adapt yo
 // hasmap mehtod:
 
 const isAnagram = (s,t) => {
+    if(s.length !== t.length) return false
     const sHashmap = {}
     const tHashmap = {}
+    
     for(const letter of s) {
-        if(!hasOwnPropety(letter)) {
-            sHashmap[letter]++
-        }  else {
+        if(!sHashmap.hasOwnProperty(letter)) {
             sHashmap[letter] = 1
-        }
-    }
-       for(const letter of t) {
-        if(!hasOwnPropety(letter)) {
-            tHashmap[letter]++
         }  else {
-            tHashmap[letter] = 1
+            sHashmap[letter]++
         }
     }
-}
-
-
-for(key in sHashmap) {
-    if(sHashmap[key] !== tHashmap[key]) {
+    
+       for(const letter of t) {
+        if(!tHashmap.hasOwnProperty(letter)) {
+            tHashmap[letter] = 1
+        }  else {
+            tHashmap[letter]++
+        }
+    }
+    
+    for(key in sHashmap) {
+    if(tHashmap[key] !== sHashmap[key]) {
         return false
     }
 }
-return true 
+    return true 
+}
+
+
