@@ -41,25 +41,16 @@ strs[i] consists of lowercase English letters.
 const groupAnagrams = strs => {
     const sortedStrs = strs.map(e => [...e].sort().join(''))
     const hashmap = {}
-    const output = []
-    let i = 0
-    for(const word of sortedStrs) {
-            if(!hashmap.hasOwnProperty(word)) {
-                hashmap[word] = i
-            }  else {
-                hashmap[word] = [...String(hashmap[word]), i]
-            }
-            i++
+    
+    for(let i = 0; i < strs.length; i++) {
+        if(!hashmap[sortedStrs[i]]) {
+            hashmap[sortedStrs[i]] = [strs[i]]
+        }  else {
+            hashmap[sortedStrs[i]].push(strs[i])
+        }
     }
-
-    return hashmap
-    for(key in hashmap) {
-        output.push([...(hashmap[key])])
-    }
-
-    return output
-        
-    }
+    return Object.values(hashmap)
+}
 
 
 console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
