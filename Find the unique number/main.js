@@ -17,9 +17,27 @@ Find The Unique
 
 
 
+// function findUniq(arr) {
+//     arr = arr.sort((a,z) => a - z)
+//     const lastElement = arr.pop()
+//     const comparisonArr = arr.slice(0,2).concat(lastElement)
+//     return Number(comparisonArr.filter((e,i,a) => e !== a[1]).join(''))
+// }
+
+
+// hashmap method:
 function findUniq(arr) {
-    arr = arr.sort((a,z) => a - z)
-    const lastElement = arr.pop()
-    const comparisonArr = arr.slice(0,2).concat(lastElement)
-    return Number(comparisonArr.filter((e,i,a) => e !== a[1]).join(''))
+    const hashmap = {}
+    for(number of arr) {
+        if(!hashmap.hasOwnProperty(number)) {
+            hashmap[number] = 1
+        }  else {
+            hashmap[number]++
+        }
+    }
+    for(key in hashmap) {
+        if(hashmap[key] === 1) {
+            return key
+        }
+    }
 }
