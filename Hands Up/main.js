@@ -24,4 +24,24 @@ Step   P1   P2   P3
 Given a number, return an array with the number of hands raised by each person at that step.
 */
 
+// number integer, denoting a step
+// an array of 3 integers  ( either  0, 1 or 2 denoting the number of hands each person is raising)
+// an array with nubmer of hands for each person
+// 4 ---> [1,1,0]
 
+
+// every step divisible by 9 raises person3s hand
+// every step divisivle by 6 raises person2s hand
+// every step 
+
+// function with the given nubmer as the argument
+// assign a variable for each person (person1,person2,person3)
+// 
+
+const getPositions = num => {
+    const a = Math.floor(num % 3) 
+    const b = Math.floor((num / 3) % 3)
+    const c = Math.floor((num / 9) % 3)
+    return [a,b,c]
+}
+console.log(countNumberOfHands(4))
