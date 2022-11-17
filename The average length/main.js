@@ -12,4 +12,18 @@ The input array's length > 1
 */
 
 
+// array of strings of the same letter type
+// array of strings ith the lenght if each element adjusted to match average length in given array
+// ['I', 'mm', 'ooooo'] ---> average (rounded) 3 ---> ['III','mmm','ooo]
+
+// function with array passed as argument
+// find the average length by adding all the letters and dividng by the number of elements
+// use Math.round()
+// use map to create a new array and use repeat on the first character of every string [0] to make the number of chars match the average 
+
+
+const averageLength = arr => {
+    const average = Math.round((arr.join('').length)/arr.length)
+    return arr.map(e => e[0].repeat(average))
+}
 
