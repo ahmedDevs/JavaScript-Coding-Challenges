@@ -8,10 +8,19 @@ characters reversed.
 // add the characters to another variable as I loop
 
 // O(n) complexity (linear)
+// const reverseString = string => {
+//     let reversedString = ''
+//     for(let i = string.length-1; i >= 0; i--) {
+//         reversedString += string[i]
+//     }
+//     return reversedString
+// }
+
+// O(n) complexity (linear)
 const reverseString = string => {
     let reversedString = ''
-    for(let i = string.length-1; i >= 0; i--) {
-        reversedString += string[i]
+    for(let char of string) {
+        reversedString = char + string
     }
     return reversedString
 }
