@@ -25,11 +25,7 @@ No String or Array Methods (well brute force it first, but then no methods)!
 function mostCommonChar(string) {
     const hashmap = {}
     for(char of string) {
-        if(!hashmap.hasOwnProperty(char)) {
-            hashmap[char] = 1
-        }  else {
-            hashmap[char]++
-        }
+        hashmap[char] = hashmap[char] + 1 || 1
     }
     let greatest = ''
     for(key in hashmap) {
