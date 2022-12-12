@@ -37,3 +37,16 @@ const containsDuplicate = (nums) => {
     }
     return false 
 }
+
+// another way of doing it 
+// const containsDuplicate = (nums) => {
+//     const hashmap = {}
+//     for(let num of nums) {
+//         if(hashmap[num]) {
+//             return true
+//         }  else {
+//             hashmap[num] = 1
+//         }
+//     }
+//      return false
+// }
