@@ -23,19 +23,17 @@ Constraints:
 -109 <= nums[i] <= 109
 */
 
+// O(n) space and time complexity
 
-
-const hashNums = {}
-for(const num of nums) {
-    if(!hashNums.hasOwnProperty(num)){
-        hashNums[num] = 1
-    }  else {
-        hashNums[num] ++
+const containsDuplicate = (nums) => {
+    const hashmap = {}
+    for(let num of nums) {
+        hashmap[num] = hashmap[num] + 1 || 1
     }
-}
-for(key in hashNums) {
-    if(hashNums[key] > 1) {
-        return true 
+    for(key in hashmap) {
+        if(hashmap[key] > 1) {
+            return true
+        }
     }
+    return false 
 }
-return false 
