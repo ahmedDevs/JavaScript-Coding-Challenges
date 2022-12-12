@@ -26,24 +26,21 @@ Constraints:
 
 
 
+
 /**
  * @param {number[]} nums
  * @param {number} k
  * @return {boolean}
  */
 
-
- const containsNearbyDuplicate = (nums, k) => {
-    const hashNums = {}
-    for(let num of nums) {
-        hashNums[num] = hashNums[num] + 1 || 1
-    }
-    for(key in hashNums) {
-        if(hashNums[key] > 1) {
-           if(Math.abs(nums.indexOf(Number(key)) - nums.lastIndexOf(Number(key))) <= k) {
-               return true
-           }
+// O(n) space and time complexity
+const containsNearbyDuplicate = (nums, k) => {
+    const numsMap = new Map()
+    for(let i = 0; i < nums.length; i++) {
+        if(i - numsMap.get(nums[i]) <= k) { 
+            return true 
         }
+        numsMap.set(nums[i], i)
     }
-    return false
+    return false 
 }
