@@ -35,11 +35,39 @@ Constraints:
  */
     
 
- const fib = n => {
-    if(n === 0) return 0
-    const arr = [0,1]
-    for(let i = 2; i <= n; i++) {
-        arr[i] = arr[i - 1] + arr[i - 2]
+
+
+
+// memoization method:
+const memo = {}
+function fib(n) {
+    if(n <= 1) {
+        return n
+    } else if(memo[n]) {
+        return memo[n]
+    } else {
+        let result = fib(n - 1) + fib(n - 2)
+        memo[n] = result
+        return result
     }
-    return arr[arr.length - 1]
 }
+
+// for loop method
+// const fib = n => {
+//     if(n === 0) return 0
+//     const arr = [0,1]
+//     for(let i = 2; i <= n; i++) {
+//         arr[i] = arr[i - 1] + arr[i - 2]
+//     }
+//     return arr[arr.length - 1]
+// }
+
+// recursive method:
+// function fib(n) {
+//     if(n < 2) {
+//         return n
+//     }
+//     return fib(n - 1) + fib(n - 2)
+// }
+
+
